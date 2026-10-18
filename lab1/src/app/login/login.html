@@ -1,13 +1,44 @@
-<form (ngSubmit)="login()"> 
- <mat-form-field appearance="fill">
-    <input matInput placeholder="email" type="email" 
-    [(ngModel)]="email">
-  </mat-form-field>
+<div class="login-container">
+  <mat-card appearance="outlined" class="login-card">
 
-   <mat-form-field appearance="fill">
-    <input matInput placeholder="password" type="password" 
-    [(ngModel)]="password">
-  </mat-form-field>
+    <mat-card-header>
+      <mat-card-title>Welcome Back</mat-card-title>
+      <mat-card-subtitle>Connectez-vous à votre compte</mat-card-subtitle>
+    </mat-card-header>
 
-  <button type="submit"> Submit</button>
-</form>
+    <mat-card-content>
+      <form (ngSubmit)="login()">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="exemple@email.com"
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="Votre mot de passe"
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="login-button">
+          Login
+        </button>
+
+      </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>
